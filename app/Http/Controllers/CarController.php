@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Car;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Auth;
 class CarController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Create a new controller instance.
      *
