@@ -20,10 +20,10 @@ class CarController extends Controller
     }
 
     public function updateCar(Request $request, $id){
-        $car = Car::find($id);
-        $car->make = request->json('make');
-        $car->model = request->json('model');
-        $car->year = request->json('year');
+        $car = Car::find($id); 
+        $car->make = $request->json('make');
+        $car->model = $request->json('model');
+        $car->year = $request->json('year');
         $car->save();
 
         return response()->json($car);
@@ -36,7 +36,7 @@ class CarController extends Controller
     }
 
     public function index(){
-        $cars =  Car::all();
+        $cars =  Car::all(); 
         return response()->json($cars);
     }
 }
